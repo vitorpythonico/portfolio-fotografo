@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@700&family=Ropa+Sans&family=Sawarabi+Mincho&display=swap');
+
+:root {
+	/*FONTS*/
+	--email_font: "Ropa Sans";
+	--aside_font: "Sawarabi Mincho";
+	--personalName_font: "Rokkitt";
+
+	/*COLORS*/
+	--bg_color: #EBE2E2;
+
+	/*SIZES*/
+	--email-text_size: 20px;
+	--aside-text_size: 18px;	
+	--personalName-text_size: 30px;	
+}
