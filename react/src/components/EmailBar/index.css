@@ -1,0 +1,24 @@
+.email-bar {
+	grid-area: header;
+
+	width: 100%;
+}
+
+.email-bar > .content {
+	display: flex;
+	align-items: center;
+
+	margin: 1em 0 0.5em 1em;
+}
+
+#email {
+	font-family: var(--email_font);
+	font-size: var(--email-text_size);
+	margin-left: 0.6em;
+}
+
+#line {
+	width: 1000px;
+	height: 2px;
+	background: #8C8181;
+}
