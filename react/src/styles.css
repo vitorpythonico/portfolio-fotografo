@@ -11,14 +11,18 @@
 
 	/*SIZES*/
 	--email-text_size: 20px;
-	--aside-text_size: 18px;
-	--personalName-text_size: 30px;
+	--aside-text_size: 22px;
+	--personalName-text_size: 40px;
+
+	--width: 100%;
+	--height: 100vh;
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	list-style: none;
 }
 
 .svg-images {
@@ -28,17 +32,22 @@
 
 body {
 	width: 100%;
+	height: 200vh;
 }
 
 #root {
-	display: grid;
-	grid-template-columns: 1fr 4fr;
-	grid-template-rows: 1fr 6fr;
-	grid-template-areas: "  .   header"
-						 "aside main";
-
 	background: var(--bg_color);
 
 	width: 100%;
 	height: 100%;
+}
+
+.divisory {
+	position: fixed;
+	left: 19em;
+	top: 6em;
+
+	width: 2px;
+	height: calc(var(--height) - 8em);
+	background: #8D8282;
 }

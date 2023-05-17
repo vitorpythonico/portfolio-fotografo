@@ -1,0 +1,50 @@
+.aside {
+	width: 100%;
+	position: fixed;
+	top: 7em;
+}
+
+h1 {
+	font-family: var(--personalName_font);
+	font-size: var(--personalName-text_size);
+	margin: 0 0em 0 1.5em;
+}
+
+.aside-items > ul {
+	font-family: var(--aside_font);
+	font-size: var(--aside-text_size);
+
+	margin: 1.2em;
+	margin-left: 4em;
+}
+
+a {
+	text-decoration: none;
+	color: #332F2F;
+}
+
+.aside-items li {
+	line-height: 2em;
+}
+
+.albums li {
+	margin-left: 1em;
+}
+
+.aside-items p {
+	color: #332F2F;
+	cursor:pointer;
+}
+
+.albums .hidden {
+	display: none;
+}
+
+.social-links {
+	position: fixed;
+	bottom: 1.5em;
+
+}
+.social-links img{
+	margin-left: 4.5em;
+}

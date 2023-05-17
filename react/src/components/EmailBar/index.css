@@ -1,7 +1,8 @@
 .email-bar {
-	grid-area: header;
-
+	position: fixed;
+	left: 20em;
 	width: 100%;
+
 }
 
 .email-bar > .content {
@@ -18,7 +19,7 @@
 }
 
 #line {
-	width: 1000px;
+	width: calc(var(--width) - 30em);
 	height: 2px;
 	background: #8C8181;
 }
