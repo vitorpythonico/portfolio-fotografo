@@ -1,8 +1,8 @@
 .email-bar {
 	position: fixed;
-	left: 20em;
+	left: 21em;
 	width: 100%;
-
+	background: #EBE2E2
 }
 
 .email-bar > .content {

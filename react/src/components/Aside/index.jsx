@@ -1,9 +1,8 @@
-import './styles.css'
+import './index.css'
 import instagramIcon from '../../assets/icon-instagram.svg'
 import whatsappIcon from '../../assets/icon-whatsapp.svg'
 
 function Aside() {
-
 	const showAlbums = (e) => {
 		e.target.nextElementSibling.classList.toggle('hidden')
 	}

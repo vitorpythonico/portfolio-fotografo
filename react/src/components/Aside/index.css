@@ -1,5 +1,5 @@
 .aside {
-	width: 100%;
+	grid-area: aside;
 	position: fixed;
 	top: 7em;
 }
@@ -7,7 +7,7 @@
 h1 {
 	font-family: var(--personalName_font);
 	font-size: var(--personalName-text_size);
-	margin: 0 0em 0 1.5em;
+	margin: 0 0em 0 1em;
 }
 
 .aside-items > ul {
