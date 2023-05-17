@@ -2,9 +2,13 @@ import './index.css'
 import instagramIcon from '../../assets/icon-instagram.svg'
 import whatsappIcon from '../../assets/icon-whatsapp.svg'
 
+import {useRef} from 'react'
+
 function Aside() {
-	const showAlbums = (e) => {
-		e.target.nextElementSibling.classList.toggle('hidden')
+	const albumList = useRef();
+
+	const showAlbums = () => {
+		albumList.current.classList.toggle('hidden')
 	}
 
 	return (
@@ -16,7 +20,7 @@ function Aside() {
 						<li><a href="#">Recent</a></li>
 						<li className="albums">
 							<p onClick={showAlbums} href="">Albums</p>
-							<ul className="hidden">
+							<ul ref={albumList} className="hidden">
 								<li><a href="#">Personal</a></li>
 								<li><a href="#">Travel</a></li>
 							</ul>
