@@ -1,0 +1,36 @@
+.container {
+	align-self: center;
+	justify-self: center;
+}
+
+.photo-card {
+	max-width:100%;
+	border-radius: 5px;
+}
+
+.photo-card img {
+	/*FIX: ajustar metadata ao tamanho da imagem*/
+	max-width: 100%;
+	object-fit: scale-down;
+	border-radius: 5px 5px 0 0;
+}
+
+.photo-metadata {
+	display: flex;
+	justify-content: space-between;
+
+	margin: 0.5em 0.2em;
+}
+
+.photo-card .description {
+	font-size: 19px;
+	margin-top: 0.5em;
+}
+
+.photo-metadata .date {
+	font-family: "Ropa Sans";
+}
+
+.photo-metadata .location {
+	font-family: "Ropa Sans";
+}

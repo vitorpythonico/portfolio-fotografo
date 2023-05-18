@@ -1,5 +1,6 @@
 import EmailBar from './components/EmailBar';
 import Aside from './components/Aside';
+import PhotoViewer from './components/PhotoViewer';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <EmailBar />
       <Aside />
       <div className="divisory"></div>
+      <PhotoViewer/>
     </>
   )
 }

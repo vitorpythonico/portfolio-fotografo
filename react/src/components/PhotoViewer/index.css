@@ -1,0 +1,11 @@
+main {
+	grid-area: main;
+}
+
+.photo-galery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 3em;
+
+	margin: 7em 3em 0 -1em;
+}
