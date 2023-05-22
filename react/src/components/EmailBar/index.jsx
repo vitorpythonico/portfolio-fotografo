@@ -6,7 +6,7 @@ function EmailBar() {
 		<>
 			<header className="email-bar">
 				<div className="content">
-					<img className="svg-images" src={emailIcon} alt="Email icon" />
+					<img className="email-svg" src={emailIcon} alt="Email icon" />
 					<p id="email">gabrieloliveirafsociety@gmail.com</p>
 				</div>
 				<div id="line"></div>

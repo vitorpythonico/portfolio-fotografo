@@ -4,8 +4,33 @@ main {
 
 .photo-galery {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 3em;
+	grid-template-columns: repeat(1, 1fr);
+	grid-gap: 2em;
 
-	margin: 7em 3em 0 -1em;
+	margin: 15% 12% 0 6%;
+}
+
+@media screen and (max-width: 500px) {
+
+	.photo-galery {
+		margin: 5% 10%;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.photo-galery {
+		grid-template-columns: repeat(2, 1fr);
+		margin: 18% 3% 0 -1%;
+	}
+
+}
+
+@media screen and (min-width: 1000px) {
+	.photo-galery {
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 3em;
+
+		margin: 10% 3% 0 -1%;
+
+	}
 }

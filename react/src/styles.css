@@ -10,13 +10,22 @@
 	--bg_color: #EBE2E2;
 
 	/*SIZES*/
-	--email-text_size: 20px;
-	--aside-text_size: 22px;
-	--personalName-text_size: 40px;
-
+	--email-text_big-size: 20px;
+	--email-text_small-size: 15px;
+	
+	--aside-text_big-size: 22px;
+	--aside-text_small-size: 18px;
+	
+	--personalName-big_size: 40px;
+	--personalName-medium_size: 30px;
+	--personalName-small_size: 20px;
+	
 	--title-photocard_size: 20px;
 
-	--width: 100%;
+	--personalName_big-margin: 1em;
+	--personalName_small-margin: 0.2em;
+
+	--width: 100vw;
 	--height: 100vh;
 }
 
@@ -25,11 +34,6 @@
 	padding: 0;
 	box-sizing: border-box;
 	list-style: none;
-}
-
-.svg-images {
-	width: 40px;
-	height: 40px;
 }
 
 body {
@@ -48,12 +52,11 @@ body {
 	height: 100%;
 }
 
-.divisory {
-	position: fixed;
-	left: 19em;
-	top: 6em;
-
-	width: 2px;
-	height: calc(var(--height) - 8em);
-	background: #8D8282;
+@media screen and (max-width: 500px) {
+	#root {
+	grid-template-columns: 1fr 5fr;
+		grid-template-areas:
+			"aside header"
+			"main main";
+	}
 }

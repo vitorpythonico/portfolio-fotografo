@@ -1,6 +1,8 @@
+header {
+	grid-area: header;
+}
+
 .email-bar {
-	position: fixed;
-	left: 21em;
 	width: 100%;
 	background: #EBE2E2
 }
@@ -9,17 +11,55 @@
 	display: flex;
 	align-items: center;
 
-	margin: 1em 0 0.5em 1em;
 }
+
+.email-svg {
+		width: 40px;
+		height: 40px;
+	}
 
 #email {
 	font-family: var(--email_font);
-	font-size: var(--email-text_size);
 	margin-left: 0.6em;
 }
 
 #line {
-	width: calc(var(--width) - 30em);
-	height: 2px;
-	background: #8C8181;
+		height: 2px;
+		background: #8C8181;
+	}
+	
+@media screen and (max-width: 600px) {
+	.email-bar {
+	}
+
+	.email-bar > .content {
+		margin: 2% 0 1% 1%;
+	}
+
+	#email {
+		font-size: var(--email-text_small-size);
+	}
+
+	#line {
+		width: calc(var(--width) - 30%);
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.email-bar {
+		position: fixed;
+		left: calc(var(--width) - 82%);
+	}
+
+	.email-bar > .content {
+		margin: 2% 0 0.5% 1%;
+	}
+
+	#email {
+		font-size: var(--email-text_big-size);
+	}
+
+	#line {
+		width: calc(var(--width) - 25%);
+	}
 }

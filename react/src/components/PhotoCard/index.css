@@ -9,10 +9,9 @@
 }
 
 .photo-card img {
-	/*FIX: ajustar metadata ao tamanho da imagem*/
 	max-width: 100%;
 	object-fit: scale-down;
-	border-radius: 5px 5px 0 0;
+	border-radius: 10px;
 }
 
 .photo-metadata {
@@ -23,7 +22,8 @@
 }
 
 .photo-card .description {
-	font-size: 19px;
+	font-family: var(--aside_font);
+	font-size: 1.4em;
 	margin-top: 0.5em;
 }
 

@@ -6,8 +6,7 @@ function App() {
   return (
     <>
       <EmailBar />
-      <Aside />
-      <div className="divisory"></div>
+      <Aside/>
       <PhotoViewer/>
     </>
   )
