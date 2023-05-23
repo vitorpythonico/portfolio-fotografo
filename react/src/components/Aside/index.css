@@ -91,7 +91,7 @@ nav li {
 	background: #8D8282;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
 	.aside {
 		position: absolute;
 		top: 0; left: 0;
@@ -115,9 +115,9 @@ nav li {
 	.two,
 	.three {
 		width: 100%;
-		height: 5px;
+		height: 10%;
 		background: black;
-		margin: 6px auto;
+		margin: 16% auto;
 
 		transition-duration: 0.3s;
 	}
@@ -132,12 +132,10 @@ nav li {
 
 	.aside.on .one {
 		transform: rotate(45deg) translate(7px, 7px);
-
 	}
 
 	.aside.on .two {
 		opacity: 0;
-
 	}
 
 	.aside.on .three {
@@ -157,11 +155,12 @@ nav li {
 	.aside.on nav h1 {
 		position: absolute;
 		top: 2em;
+		left: 10%;
 		font-size: var(--personalName-big_size);
 	}
 
 	.aside.on nav > ul {
-		margin: 9em 2em;
+		margin: 11em 7%;
 	}
 	.aside.on ul li {
 		font-size: var(--aside-text_big-size);
@@ -189,7 +188,7 @@ nav li {
 
 }
 
-@media screen and (min-width: 500px) and (max-width: 849px) {
+@media screen and (min-width: 601px) and (max-width: 849px) {
 
 	nav {
 		text-align: center;

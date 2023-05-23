@@ -52,7 +52,7 @@ body {
 	height: 100%;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
 	#root {
 	grid-template-columns: 1fr 5fr;
 		grid-template-areas:
