@@ -27,3 +27,8 @@ dist-ssr
 #Python
 __pycache__/
 venv/
+
+
+#Local databases#
+dev-storage.sqlite
+storage.sqlite
