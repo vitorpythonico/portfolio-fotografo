@@ -132,7 +132,7 @@ nav li {
 	}
 
 	.aside.on .menu-toggle {
-		margin-left: 1.2em;
+		position: absolute;
 	}
 
 		.aside.on .one {
@@ -144,7 +144,7 @@ nav li {
 	}
 
 	.aside.on .three {
-		transform: rotate(-45deg) translate(7px, -6px);
+		transform: rotate(-45deg) translate(7px, -7px);
 	}
 
 	.aside.on nav {
@@ -158,18 +158,19 @@ nav li {
 }
 
 	.aside.on nav h1 {
-		position: absolute;
-		top: 2em;
-		left: 10%;
+		margin: 1.5em 0 0 2em;
 		font-size: var(--personalName-big_size);
 	}
 
 	.aside.on nav > ul {
-		margin: 11em 7%;
+		margin-left: 5.5em;
 	}
+
 	.aside.on ul li {
+		margin-left: 1em;
 		font-size: var(--aside-text_big-size);
 	}
+
 
 	.aside.on .socialmedia-links {
 		display: flex;
