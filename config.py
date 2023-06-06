@@ -4,7 +4,7 @@ basedir = os.path.dirname(__file__)
 class Config:
 	DEBUG = False
 	TESTING = False
-	IMG_PATH = os.getenv('IMG_PATH', 'images/')
+	IMG_PATH = os.getenv('IMG_PATH', os.path.join(basedir, 'images/'))
 
 
 class DevelopmentConfig(Config):
