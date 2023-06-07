@@ -1,8 +1,11 @@
+import {useRef, useState, useContext } from 'react'
+import { LoadPhotosContext} from '../../contexts/LoadPhotosContext'
+
 import './index.css'
-import {useRef, useState } from 'react'
 
 function Aside() {
 	const [showMenu, setShowMenu] = useState(true);
+	const { changeAlbum } = useContext(LoadPhotosContext)
 
 	const albumList = useRef();
 	const menu = useRef();
@@ -25,12 +28,12 @@ function Aside() {
 				<nav>
 					<h1>Vitor Gabriel</h1>
 					<ul>
-						<li><a href="">Recent</a></li>
+						<li><a onClick={changeAlbum} href="#">recent</a></li>
 						<li className="albums">
-							<p onClick={showAlbums} href="">Albums</p>
+							<p onClick={showAlbums}>Albums</p>
 							<ul ref={albumList} className="hidden">
-								<li><a href="">Personal</a></li>
-								<li><a href="">Travel</a></li>
+								<li><a onClick={changeAlbum} href="#">personal</a></li>
+								<li><a onClick={changeAlbum} href="#">travel</a></li>
 							</ul>
 						</li>
 						<li><a href="">About me</a></li>

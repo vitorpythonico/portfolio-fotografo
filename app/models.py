@@ -52,7 +52,11 @@ class Photo(db.Model):
 			12: 'dez',
 		}
 
-		return (self.date.day, number_to_abbrev[self.date.month], self.date.year)
+		return {
+			'day': self.date.day,
+			'month': number_to_abbrev[self.date.month],
+			'year': self.date.year
+			}
 
 	def __repr__(self):
 		return f'Photo id={self.id} src={self.src} album={self.album.name} date={self.date}'

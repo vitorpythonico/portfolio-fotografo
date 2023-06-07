@@ -1,17 +1,21 @@
 import './index.css'
 
-export default function PhotoCard( {src} ) {
+export default function PhotoCard( { teste, src, description, date, place} ) {
+	const imgCDN = 'http://192.168.0.107:5000/images/'
+
 	return (
 	<>
 		<div className="container">
 			<div className="photo-card">
-				<img src={src} alt="photography" />
+				<img src={imgCDN + src} alt="photography" />
 				<h6 className="description">
-					Essa foto foi tirada na putaquepariu
+					{description}
 				</h6>
 				<div className="photo-metadata">
-					<p className="date">17 de mai, 2023</p>
-					<p className="location">Bora Bora, Polinésia Francesa</p>
+					<p className="date">
+						{date.day} de {date.month}, {date.year}
+					</p>
+					<p className="location">{place}</p>
 				</div>
 			</div>	
 		</div>

@@ -8,8 +8,8 @@ db = SQLAlchemy()
 def create_app(config_name):
 	app = Flask(__name__, static_url_path='', static_folder='frontend/')
 	app.config.from_object(config[config_name])
-	CORS(app, resources={'/api/*': {'origins': 'http://localhost:*'}})
 	db.init_app(app)
+	CORS(app, resources={'/api/*': {'origins': '*'}})
 
 	from . import api
 	from . import test_db

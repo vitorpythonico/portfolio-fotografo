@@ -31,6 +31,7 @@ nav p,
 li a {
 	color: #332F2F;
 	cursor:pointer;
+	text-transform: capitalize;
 	transition-duration: 0.5s;
 }
 
@@ -133,6 +134,7 @@ nav li {
 
 	.aside.on .menu-toggle {
 		position: absolute;
+		left: 2%;
 	}
 
 		.aside.on .one {
