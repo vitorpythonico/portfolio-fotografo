@@ -1,6 +1,20 @@
 import os
 basedir = os.path.dirname(__file__)
 
+def create_db(app, db):
+	path = app.config['SQLALCHEMY_DATABASE_URI'][10:]
+	if os.path.exists(path):
+		return True
+
+	db.create_all()
+	return False
+
+def create_img_folder(folder):
+	path = os.path.join(basedir, folder)
+	if not (os.path.exists(path)):
+		os.mkdir(path, mode=0o644)
+
+
 class Config:
 	DEBUG = False
 	TESTING = False

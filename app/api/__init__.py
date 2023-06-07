@@ -1,8 +1,7 @@
 from flask.blueprints import Blueprint
-from rich import print as pprint
 from ..models import Photo, Album
 
-api = Blueprint('api', __name__)
+api = Blueprint('api', __name__, static_folder='../images')
 
 @api.route('/api/albums/<album>', methods=['POST'])
 def get_album(album):

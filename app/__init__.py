@@ -1,8 +1,7 @@
 from flask import Flask, send_from_directory, Blueprint
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
-
-from config import config
+from config import config, create_img_folder, create_db
 
 db = SQLAlchemy()
 
@@ -15,10 +14,16 @@ def create_app(config_name):
 	from . import api
 	from . import test_db
 
+	# if app.config['IMG_PATH'][:4] == 'http':
+	# 	pass
+	# else:
+	# 	api.api._static_folder = app.config['IMG_PATH']
+	# 	create_img_folder(app.config['IMG_PATH'])
+
 	with app.app_context():
-		db.drop_all()
-		db.create_all()
-		test_db.run_db_tests()
+		db_exists = create_db(app, db)
+		if not db_exists:
+			test_db.run_db_tests()
 
 	api.init_bp(app)
 
