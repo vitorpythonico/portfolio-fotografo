@@ -26,7 +26,7 @@ function Aside() {
 					<div className="three"></div>
 				</div>
 				<nav>
-					<h1>Vitor Gabriel</h1>
+					<p class="personal-name">Vitor Gabriel</p>
 					<ul>
 						<li><a onClick={changeAlbum} href="#">recent</a></li>
 						<li className="albums">

@@ -11,6 +11,9 @@ export default function PhotoViewer() {
 		return (
 			<>
 				<main>
+				<div className="page-title">
+					<h1>Photo Galery</h1>
+				</div>
 					<div className="photo-galery">
 						{
 							Object.values(data).map((photo, id) =>

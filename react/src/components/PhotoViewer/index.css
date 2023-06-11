@@ -2,6 +2,20 @@ main {
 	grid-area: main;
 }
 
+.page-title {
+	text-align: center;
+}
+
+h1 {
+	display: inline-block;
+
+	font-family: var(--personalName_font);	color: white;
+	
+	padding: 0.2em;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+}
+
 .photo-galery {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
@@ -11,26 +25,39 @@ main {
 }
 
 @media screen and (max-width: 600px) {
+	h1 {
+		font-size: 2.5em;
+		margin-top: 0.8em;
+	}
 
 	.photo-galery {
-		margin: 5% 10%;
+		margin: 10% 10%;
 	}
 }
 
 @media screen and (min-width: 601px) {
+	h1 {
+		font-size: 3em;
+		margin-top: 2.5em;
+	}
+
 	.photo-galery {
 		grid-template-columns: repeat(2, 1fr);
-		margin: 18% 3% 0 -1%;
+		margin: 8% 3% 0 -1%;
 	}
 
 }
 
 @media screen and (min-width: 1000px) {
+	h1 {
+		font-size: 3.5em;
+	}
+
 	.photo-galery {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 		grid-gap: 3em;
 
-		margin: 10% 3% 0 -1%;
+		margin: 5% 3% 0 -1%;
 
 	}
 }

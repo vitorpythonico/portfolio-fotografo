@@ -4,7 +4,7 @@ header {
 
 .email-bar {
 	width: 100%;
-	background: #EBE2E2
+	background: var(--bg_color)
 }
 
 .email-bar > .content {
@@ -25,7 +25,7 @@ header {
 
 #line {
 		height: 2px;
-		background: #8C8181;
+		background: white;
 	}
 	
 @media screen and (max-width: 600px) {

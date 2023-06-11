@@ -2,18 +2,21 @@
 	grid-area: aside;
 	position: fixed;
 	top: 7em;
-
 	display: flex;
-	width: 16%;
 	justify-content: center;
+
+	width: 16%;
+	height: 100%;
 }
 
-h1 {
+.personal-name {
+	color: #19E4F1;
 	font-family: var(--personalName_font);
 	font-size: var(--personalName-small_size);
 }
 
 nav > ul {
+	margin-left: 0.8em;
 	font-family: var(--aside_font);
 
 }
@@ -24,12 +27,11 @@ li a {
 
 li a:hover,
 nav p:hover {
-	color: #1FA2FF;
+	color: #19E4F1;
 }
 
-nav p,
+nav li p,
 li a {
-	color: #332F2F;
 	cursor:pointer;
 	text-transform: capitalize;
 	transition-duration: 0.5s;
@@ -37,6 +39,7 @@ li a {
 
 nav li {
 	line-height: 2em;
+
 }
 
 .albums .hidden {
@@ -89,7 +92,7 @@ nav li {
 	width: 2px;
 	height: calc(var(--height) - 8em);
 
-	background: #8D8282;
+	background: white;
 }
 
 @media screen and (max-width: 600px) {
@@ -117,7 +120,7 @@ nav li {
 	.three {
 		width: 100%;
 		height: 10%;
-		background: black;
+		background: #19E4F1;
 		margin: 16% auto;
 
 		transition-duration: 0.3s;
@@ -137,7 +140,7 @@ nav li {
 		left: 2%;
 	}
 
-		.aside.on .one {
+	.aside.on .one {
 		transform: rotate(45deg) translate(6px, 6px);
 	}
 
@@ -150,22 +153,22 @@ nav li {
 	}
 
 	.aside.on nav {
+
 		width: 100%;
 		height: 100%;
-	
 		display: flex;
 		flex-direction: column;
-
-		transition-duration: 2s;
+		align-items: center;
 }
 
-	.aside.on nav h1 {
-		margin: 1.5em 0 0 2em;
+	.aside.on nav .personal-name {
 		font-size: var(--personalName-big_size);
+
+		margin-top: 2em;
 	}
 
 	.aside.on nav > ul {
-		margin-left: 5.5em;
+		margin-right: 7em;
 	}
 
 	.aside.on ul li {
@@ -189,7 +192,7 @@ nav li {
 	.socialmedia-links #whatsapp-icon {
 		background: url('../../assets/whatsapp-colorful.svg');
 	}
-		
+
 	.socialmedia-links #instagram-icon {
 		background: url('../../assets/instagram-colorful.svg');
 	}
@@ -201,6 +204,11 @@ nav li {
 	nav {
 		text-align: center;
 	}
+
+	.socialmedia-links .svg-images {
+		width: 28px;
+		height: 28px;
+	}
 }
 
 @media screen and (min-width: 850px) {
@@ -209,14 +217,14 @@ nav li {
 	}
 
 	.socialmedia-links .svg-images {
-		width: 30px;
-		height: 30px;
+		width: 40px;
+		height: 40px;
 	}	
 
 }
 
-@media screen and (min-width: 1200px) {
-	h1 {
+@media screen and (min-width: 1050px) {
+	.personal-name {
 		font-size: var(--personalName-medium_size);
 	}
 
@@ -225,14 +233,14 @@ nav li {
 	}
 
 	.socialmedia-links .svg-images {
-		width: 40px;
-		height: 40px;
+		width: 45px;
+		height: 45px;
 	}
 
 }
 
-@media screen and (min-width: 1700px) {
-	h1 {
+@media screen and (min-width: 1400px) {
+	.personal-name {
 		font-size: var(--personalName-big_size);
 	}
 }

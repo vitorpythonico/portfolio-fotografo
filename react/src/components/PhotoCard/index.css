@@ -12,14 +12,9 @@
 	max-width: 100%;
 	object-fit: scale-down;
 	border-radius: 10px;
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	cursor: pointer;
 }
 
-
-/*
-
-
-*/
 .photo-metadata {
 	display: flex;
 	justify-content: space-between;
@@ -28,9 +23,15 @@
 }
 
 .photo-card .description {
-	font-family: var(--aside_font);
+	font-family: "Ubuntu";
 	font-size: 1.4em;
 	margin-top: 0.5em;
+	transition-duration: 0.5s;
+}
+
+.photo-card .description:hover {
+	cursor: pointer;
+	color: #19E4F1;
 }
 
 .photo-metadata .date {

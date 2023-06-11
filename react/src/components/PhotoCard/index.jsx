@@ -1,6 +1,6 @@
 import './index.css'
 
-export default function PhotoCard( { teste, src, description, date, place} ) {
+export default function PhotoCard( {src, description, date, place} ) {
 	const imgCDN = 'http://192.168.0.107:5000/images/'
 
 	return (
