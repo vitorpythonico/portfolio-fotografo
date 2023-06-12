@@ -14,10 +14,9 @@ def create_app(config_name):
 	from . import api
 	from . import test_db
 
-	# if app.config['IMG_PATH'][:4] == 'http':
-	# 	pass
-	# else:
-	# 	api.api._static_folder = app.config['IMG_PATH']
+	# api.api._static_folder = app.config['IMG_PATH']
+
+	# if not app.config['IMG_PATH'][:4] == 'http':
 	# 	create_img_folder(app.config['IMG_PATH'])
 
 	with app.app_context():

@@ -28,15 +28,15 @@ function Aside() {
 				<nav>
 					<p class="personal-name">Vitor Gabriel</p>
 					<ul>
-						<li><a onClick={changeAlbum} href="#">recent</a></li>
+						<li><a onClick={changeAlbum} href="#">recentes</a></li>
 						<li className="albums">
-							<p onClick={showAlbums}>Albums</p>
+							<p onClick={showAlbums}>Álbuns</p>
 							<ul ref={albumList} className="hidden">
-								<li><a onClick={changeAlbum} href="#">personal</a></li>
-								<li><a onClick={changeAlbum} href="#">travel</a></li>
+								<li><a onClick={changeAlbum} href="#">pessoal</a></li>
+								<li><a onClick={changeAlbum} href="#">viagem</a></li>
 							</ul>
 						</li>
-						<li><a href="">About me</a></li>
+						<li><a href="">sobre mim</a></li>
 					</ul>
 				</nav>
 				<div className="socialmedia-links">

@@ -4,7 +4,7 @@ import { useFetch } from '../hooks/useFetch'
 export const LoadPhotosContext = createContext();
 
 export const LoadPhotosProvider = ({ children }) => {
-	const [album, setAlbum] = useState('recent');
+	const [album, setAlbum] = useState('recentes');
 	const [photos, setPhotos] = useState({})
 	
 	const api_url = 'http://192.168.0.107:5000/api/albums/';

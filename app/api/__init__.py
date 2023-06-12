@@ -5,7 +5,7 @@ api = Blueprint('api', __name__, static_folder='../images')
 
 @api.route('/api/albums/<album>', methods=['POST'])
 def get_album(album):
-	if album == 'recent':
+	if album == 'recentes':
 		photos = Photo.get_by_recent_date() 
 		return photos
 

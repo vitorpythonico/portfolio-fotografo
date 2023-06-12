@@ -12,7 +12,7 @@ export default function PhotoViewer() {
 			<>
 				<main>
 				<div className="page-title">
-					<h1>Photo Galery</h1>
+					<h1>Galeria</h1>
 				</div>
 					<div className="photo-galery">
 						{
