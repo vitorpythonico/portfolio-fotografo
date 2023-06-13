@@ -10,7 +10,6 @@ header {
 .email-bar > .content {
 	display: flex;
 	align-items: center;
-
 }
 
 .email-svg {
@@ -29,9 +28,6 @@ header {
 	}
 	
 @media screen and (max-width: 600px) {
-	.email-bar {
-	}
-
 	.email-bar > .content {
 		margin: 2% 0 1% 1%;
 	}

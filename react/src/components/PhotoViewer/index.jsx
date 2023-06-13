@@ -10,10 +10,10 @@ export default function PhotoViewer() {
 	if (data)
 		return (
 			<>
-				<main>
-				<div className="page-title">
-					<h1>Galeria</h1>
-				</div>
+				<main className="photo-viewer">
+					<div className="page-title">
+						<h1>Galeria</h1>
+					</div>
 					<div className="photo-galery">
 						{
 							Object.values(data).map((photo, id) =>

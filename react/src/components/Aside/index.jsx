@@ -1,4 +1,5 @@
 import {useRef, useState, useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { LoadPhotosContext} from '../../contexts/LoadPhotosContext'
 
 import './index.css'
@@ -26,17 +27,17 @@ function Aside() {
 					<div className="three"></div>
 				</div>
 				<nav>
-					<p class="personal-name">Vitor Gabriel</p>
+					<p className="personal-name">Vitor Gabriel</p>
 					<ul>
-						<li><a onClick={changeAlbum} href="#">recentes</a></li>
+						<li><Link onClick={changeAlbum} to="/">recentes</Link></li>
 						<li className="albums">
 							<p onClick={showAlbums}>Álbuns</p>
 							<ul ref={albumList} className="hidden">
-								<li><a onClick={changeAlbum} href="#">pessoal</a></li>
-								<li><a onClick={changeAlbum} href="#">viagem</a></li>
+								<li><Link onClick={changeAlbum} to="/">pessoal</Link></li>
+								<li><Link onClick={changeAlbum} to="/">viagem</Link></li>
 							</ul>
 						</li>
-						<li><a href="">sobre mim</a></li>
+						<li><Link to="/sobre">sobre mim</Link></li>
 					</ul>
 				</nav>
 				<div className="socialmedia-links">
