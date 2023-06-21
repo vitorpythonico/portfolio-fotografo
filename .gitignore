@@ -27,7 +27,7 @@ dist-ssr
 #Python
 __pycache__/
 venv/
-
+app/frontend/
 
 #Local databases#
 dev-storage.sqlite

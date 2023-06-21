@@ -1,16 +1,11 @@
-from flask.blueprints import Blueprint
-from ..models import Photo, Album
+import os
+from flask import Blueprint
 
-api = Blueprint('api', __name__, static_folder='../images')
+IMG_FOLDER = os.getenv('IMG_PATH')
 
-@api.route('/api/albums/<album>', methods=['POST'])
-def get_album(album):
-	if album == 'recentes':
-		photos = Photo.get_by_recent_date() 
-		return photos
+api = Blueprint('api', __name__, static_folder=f'../../{IMG_FOLDER}')
 
-	photos = Photo.get_by_album(album=album)
-	return photos
+from . import account, albums
 
 def init_bp(app):
 	app.register_blueprint(api)

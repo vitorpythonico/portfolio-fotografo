@@ -1,11 +1,12 @@
-import json
+from flask import jsonify
+from werkzeug.security import check_password_hash, generate_password_hash
 from . import db
 
 class Photo(db.Model):
 	__tablename__ = 'photos'
 	id = db.Column(db.Integer, primary_key=True)
 	src = db.Column(db.String(200), unique=True, nullable=False)
-	description = db.Column(db.String(150))
+	description = db.Column(db.String(200))
 	place = db.Column(db.String(100))
 	date = db.Column(db.DateTime)
 	album_id = db.Column(db.Integer, db.ForeignKey('albums.id'))
@@ -33,7 +34,7 @@ class Photo(db.Model):
 				'place': photo.place
 			}
 
-		photos_json = json.dumps(photos_dict)
+		photos_json = jsonify(photos_dict)
 		return photos_json
 
 	def format_date(self):
@@ -59,7 +60,7 @@ class Photo(db.Model):
 			}
 
 	def __repr__(self):
-		return f'Photo id={self.id} src={self.src} album={self.album.name} date={self.date}'
+		return f'<Photo id={self.id} src={self.src} album={self.album.name} date={self.date}>'
 
 
 class Album(db.Model):
@@ -69,4 +70,34 @@ class Album(db.Model):
 	photos = db.relationship('Photo', backref='album')
 
 	def __repr__(self):
-		return f'Album id={self.id} name={self.name}'
+		return f'<Album id={self.id} name={self.name}>'
+
+
+class User(db.Model):
+	__tablename__ = 'users'
+	id = db.Column(db.Integer, primary_key=True)
+	username = db.Column(db.String(64), unique=True)
+	password = db.Column(db.String(64))
+
+	def __init__(self, username, password):
+		self.username = username
+		self.password = generate_password_hash(password)
+
+	def verify_password(self, passwd):
+		return check_password_hash(self.password, passwd)
+
+	def __repr__(self):
+		return f'<User user={self.username}>'
+
+
+class TokenBlockList(db.Model):
+	__tablename__ = 'tokens'
+	id = db.Column(db.Integer, primary_key=True)
+	jti = db.Column(db.String(36), nullable=False, unique=True)
+	token_type = db.Column(db.String(10))
+	revoked_at = db.Column(db.DateTime)
+	expires = db.Column(db.DateTime)
+	user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+	def __repr__(self):
+		return f'<TokenBlockList jti={self.jti}> type={self.token_type}'
