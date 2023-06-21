@@ -3,41 +3,46 @@
 	justify-self: center;
 }
 
-.photo-card {
-	max-width:100%;
+.photoCard {
 	border-radius: 5px;
 }
 
-.photo-card img {
+.photoCard img {
 	max-width: 100%;
 	object-fit: scale-down;
 	border-radius: 10px;
 	cursor: pointer;
 }
 
-.photo-metadata {
+.photoMetadata {
 	display: flex;
 	justify-content: space-between;
 
-	margin: 0.5em 0.2em;
+	margin: 0.5rem 0.2rem;
 }
 
-.photo-card .description {
+.photoCard .description {
 	font-family: "Ubuntu";
-	font-size: 1.4em;
-	margin-top: 0.5em;
+	font-size: 1.4rem;
+	margin-top: 0.5rem;
 	transition-duration: 0.5s;
 }
 
-.photo-card .description:hover {
+.photoCard .description:hover {
 	cursor: pointer;
 	color: #19E4F1;
 }
 
-.photo-metadata .date {
+.photoMetadata .date {
 	font-family: "Ropa Sans";
 }
 
-.photo-metadata .location {
+.photoMetadata .location {
 	font-family: "Ropa Sans";
+}
+
+@media only screen and (max-width: 600px) {
+	.container {
+		margin: 1em 2em;
+	}
 }

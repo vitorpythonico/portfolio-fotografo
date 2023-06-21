@@ -54,8 +54,7 @@ body {
 @media screen and (max-width: 600px) {
 	#root {
 	grid-template-rows: 1fr;
-		grid-template-areas:
-			"aside header"
-			"main main";
-	}
+	grid-template-areas:
+		"aside header"
+		"main main";
 }

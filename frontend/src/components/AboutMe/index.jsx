@@ -1,21 +1,21 @@
-import './index.css'
+import styles from './AboutMe.module.css'
 
 export default function AboutMe() {
 	return (
-		<main className="about-me">
-			<div className="about-img">
-				<div className="about-img-box">
-					<div className="welcome">
+		<main className={styles.aboutMe}>
+			<div className={styles.aboutImg}>
+				<div className={styles.aboutImgBox}>
+					<div className={styles.welcome}>
 						<p>Olá, seja bem-vindo ao meu<br/>
-							<span className="color-neon">portfolio de fotos.</span>
+							<span className={styles.colorNeon}>portfolio de fotos.</span>
 						</p>
 					</div>
-					<div className="description">
+					<div className={styles.description}>
 						<p>
 							Me chamo Vitor e trabalho como fotógrafo há 15 anos, e aqui você encontrará uma coletânea dos meus melhores trabalhos em todos esses anos.<br/>
-							<span className="color-neon">Divirta-se.</span>
+							<span className={styles.colorNeon}>Divirta-se.</span>
 						</p>
-					</div>	
+					</div>
 				</div>
 			</div>
 		</main>

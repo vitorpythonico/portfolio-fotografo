@@ -2,24 +2,24 @@ header {
 	grid-area: header;
 }
 
-.email-bar {
+.emailBar {
 	width: 100%;
 	background: var(--bg_color)
 }
 
-.email-bar > .content {
+.emailBar > .content {
 	display: flex;
 	align-items: center;
 }
 
-.email-svg {
+.emailSvg {
 		width: 40px;
 		height: 40px;
 	}
 
 #email {
 	font-family: var(--email_font);
-	margin-left: 0.6em;
+	margin-left: 0.6rem;
 }
 
 #line {
@@ -28,7 +28,7 @@ header {
 	}
 	
 @media screen and (max-width: 600px) {
-	.email-bar > .content {
+	.emailBar > .content {
 		margin: 2% 0 1% 1%;
 	}
 
@@ -42,12 +42,12 @@ header {
 }
 
 @media screen and (min-width: 600px) {
-	.email-bar {
+	.emailBar {
 		position: fixed;
 		left: calc(var(--width) - 82%);
 	}
 
-	.email-bar > .content {
+	.emailBar > .content {
 		margin: 2% 0 0.5% 1%;
 	}
 
