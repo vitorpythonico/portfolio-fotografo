@@ -6,25 +6,62 @@
 	width: 100%;
 	height: 100vh;
 
+	background-color: #5f6669;
 	background-image: url('../../assets/about-me.jpg');
 	background-size: cover;
+	background-blend-mode: multiply;
+	background-position-x: 65%;
 }
 
 .aboutImgBox {
-	padding: 10rem 0 0 5rem;
+	padding: 6rem 2rem;
 }
 
-.welcome p {
+.aboutImgBox .welcome p {
 	font-family: var(--personalName_font);
 	font-size: 3rem;
 }
 
-.colorNeon {
-	color: #19E4F1;
+p span {
+	color: var(--neon_color);
+}
+
+.aboutImgBox .description {
+	margin: 2rem 0 0 1rem;
 }
 
 .aboutImgBox .description p{
 	font-family: var(--personalName_font);
 	font-size: 2rem;
-	margin: 2rem 0 0 1rem;
+}
+
+@media screen and (max-width: 600px) {
+	.aboutImg {
+		height: 20rem;
+	}
+
+	.aboutImgBox .welcome p {
+		font-size: 2rem;
+	}
+	.aboutImgBox .description {
+		position: absolute;
+		left: -1rem;
+		top: 23rem;
+	}
+
+	.aboutImgBox .description p {
+		font-size: 1.2rem;
+		margin: 2rem;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.aboutImg {
+		background-position: center;
+	}
+
+	.aboutImgBox {
+		padding: 10rem 4rem;
+	}
+
 }
