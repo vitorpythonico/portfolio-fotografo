@@ -10,7 +10,7 @@
 }
 
 .personalName {
-	color: #19E4F1;
+	color: var(--neon_color);
 	font-family: var(--personalName_font);
 	font-size: var(--personalName-small_size);
 }
@@ -27,7 +27,7 @@ li a {
 
 li a:hover,
 nav p:hover {
-	color: #19E4F1;
+	color: var(--neon_color);
 }
 
 nav li p,
@@ -35,11 +35,6 @@ li a {
 	cursor:pointer;
 	text-transform: capitalize;
 	transition-duration: 0.5s;
-}
-
-nav li {
-	line-height: 2.5rem;
-
 }
 
 .albums .hidden {
@@ -120,7 +115,7 @@ nav li {
 	.three {
 		width: 100%;
 		height: 10%;
-		background: #19E4F1;
+		background: var(--neon_color);
 		margin: 16% auto;
 
 		transition-duration: 0.3s;
@@ -159,10 +154,11 @@ nav li {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-}
-
+	}
+	
 	.aside.on nav .personalName {
 		font-size: var(--personalName-big_size);
+		padding-top: 12rem;
 	}
 
 	.aside.on nav > ul {
@@ -172,8 +168,8 @@ nav li {
 	.aside.on ul li {
 		margin-left: 1rem;
 		font-size: var(--aside-text_big-size);
+		line-height: 3rem;
 	}
-
 
 	.aside.on .socialmediaLinks {
 		display: flex;
@@ -217,8 +213,7 @@ nav li {
 	.socialmediaLinks .svgImages {
 		width: 40px;
 		height: 40px;
-	}	
-
+	}
 }
 
 @media screen and (min-width: 1050px) {
@@ -229,6 +224,11 @@ nav li {
 	nav > ul {
 		font-size: var(--aside-text_big-size);
 	}
+
+	nav li {
+		line-height: 2.5rem;
+	}
+
 
 	.socialmediaLinks .svgImages {
 		width: 45px;

@@ -22,7 +22,8 @@
 }
 
 .photoCard .description {
-	font-family: "Ubuntu";
+	font-family: "Poppins";
+	font-weight: 700;
 	font-size: 1.4rem;
 	margin-top: 0.5rem;
 	transition-duration: 0.5s;
@@ -30,7 +31,7 @@
 
 .photoCard .description:hover {
 	cursor: pointer;
-	color: #19E4F1;
+	color: var(--neon_color);
 }
 
 .photoMetadata .date {

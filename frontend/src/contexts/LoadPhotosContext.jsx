@@ -5,15 +5,14 @@ export const LoadPhotosContext = createContext();
 
 export const LoadPhotosProvider = ({ children }) => {
 	const [album, setAlbum] = useState('recentes');
-	const [photos, setPhotos] = useState({})
 	
-	const api_url = 'http://192.168.0.107:5000/api/albums/';
-	const {data, error, loading} = useFetch(api_url + album, 'POST')
+	const API_URL = import.meta.env.VITE_BACKEND_API_URL;
+	const { data } = useFetch(API_URL + '/albums/' + album, 'GET');
 
 	const changeAlbum = (e) => setAlbum(e.target.textContent)
 
 	return (
-		<LoadPhotosContext.Provider value={{ changeAlbum, data, error, loading }}>
+		<LoadPhotosContext.Provider value={{ changeAlbum, data }}>
 			{children}
 		</LoadPhotosContext.Provider>
 	)

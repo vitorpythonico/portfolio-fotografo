@@ -1,0 +1,102 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100vw;
+	height: 100vh;
+	background: #16181C;
+}
+
+.loginCard {
+	width: 25rem;
+	height: 35rem;
+	border-radius: 3%;
+
+	background: #303045;
+}
+
+.loginCardBox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 3rem;
+}
+
+.loginCardBox p {
+	font-family: "Poppins";
+	font-size: 1.6rem;
+	font-weight: 600;
+	text-align: center;
+	color: var(--neon_color);
+}
+
+.loginCardBox form {
+	display: flex;
+	flex-direction: column;
+
+	padding-top: 1rem;
+}
+
+.loginCardBox form * {
+	font-family: "Poppins";
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+
+
+.loginCardBox form label {
+	padding: 2rem 0 0.2rem 0;
+}
+
+.loginCardBox form input {
+	color: black;
+	background: #D9D9D9;
+	text-align: center;
+
+	width: 100%;
+	line-height: 3.5rem;
+	border-radius: 0.5rem;
+	border: 0;
+	outline: 0;
+}
+
+.loginCardBox .loginError {
+	color: red;
+}
+
+.loginCardBox .inputPasswordMetadata {
+	display: flex;
+	justify-content: space-between;
+}
+
+.loginCardBox .inputPasswordMetadata a {
+	color: var(--neon_color);
+	font-size: 1rem;
+	text-decoration: none;
+	padding-top: 2.4rem;
+}
+
+.loginCardBox .inputPasswordMetadata a:hover {
+	text-decoration: underline;
+}
+
+.loginCardBox button {
+	align-self: center;
+
+	font-family: "Poppins";
+	font-weight: 600;
+	font-size: 1.5rem;
+
+	width: 15rem;
+	height: 4rem;
+	border-radius: 0.5rem;
+	margin-top: 3rem;
+
+	background: var(--neon_color);
+}
+
+.loginCardBox button:hover {
+	cursor: pointer;
+	background: #2AAAB2;
+}

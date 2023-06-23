@@ -36,8 +36,12 @@ def check_if_token_revoked(jwt_headers, jwt_payload):
 		user_id = jwt_payload[app.config['JWT_IDENTITY_CLAIM']]
 		token = TokenBlockList.query.filter_by(jti=jti, user_id=user_id).first()
 
-		if token:
-			return token.revoked_at
+		if token and token.revoked_at:
+			db.session.delete(token)
+			db.session.commit()
+			return True
+		return False
+
 	except:
 		return True
 

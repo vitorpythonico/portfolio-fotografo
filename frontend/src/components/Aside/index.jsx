@@ -14,7 +14,7 @@ function Aside() {
 	const showAlbums = () => { albumList.current.classList.toggle(styles.hidden) };
 	const showMenuToggle = () => {
 		document.body.style.overflow = showMenu ? 'hidden' : 'initial';
-		menu.current.classList.toggle(styles.on) ;
+		menu.current.classList.toggle(styles.on);
 		setShowMenu(!showMenu);
 	};
 
