@@ -1,0 +1,116 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100vw;
+	height: 100vh;
+}
+
+.container * {
+	font-family: "Poppins";
+	font-weight: 600;
+}
+
+.controlPanelCard {
+	display: flex;
+
+	width: 60rem;
+	height: 50rem;
+	background:  #303045;
+	border-radius: 1rem;
+}
+
+.controlPanel {
+
+	width: 28%;
+	height: 100%;
+}
+
+.controlPanelBox {
+	margin: 2rem;
+}
+
+.controlPanelBox h2 {
+	font-size: 2.2rem;
+	padding-bottom: 1rem;
+}
+
+.controlPanelBox .generalArea .areas {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+
+}
+
+.controlPanelBox .generalArea .area {
+	display: flex;
+	gap: 1rem;
+	padding: 0.2rem;
+	background: #303045;
+	border: 0;
+
+}
+
+.controlPanelBox .generalArea .area:hover {
+	cursor: pointer;
+	border-radius: 0.5rem;
+	background: var(--neon_color);
+}
+
+.controlPanelCard img {
+	width: 2rem;
+	height: 2rem;
+
+}
+
+.controlPanelBox .generalArea .area h3 {
+	font-size: 1.3rem;
+}
+
+.divisoryAreas {
+	width: 12rem;
+	height: 0.2rem;
+	background: #443F3F;
+
+	margin: 1.5rem 0;
+}
+
+.controlPanelCard .divisory {
+	width: 0.2rem;
+
+	background: #443F3F;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.content h1 {
+	font-size: 3.2rem;
+	font-weight: 700;
+	text-align: center;
+	color: var(--neon_color);
+	padding: 1rem;
+
+}
+
+.content  h2 {
+	color: var(--neon_color);
+}
+
+.content .configBox {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin: 0 2rem 2rem 2rem;
+}
+
+.configBox .divisory {
+	width: 100%;
+	height: 2px;
+	background: #443F3F;
+
+}

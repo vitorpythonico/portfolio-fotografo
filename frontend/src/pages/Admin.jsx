@@ -1,5 +1,5 @@
+import ControlPanel from '../components/ControlPanel'
+
 export default function Admin() {
-	return (
-		<h1>Admin</h1>
-	)
+	return <ControlPanel />
 }
