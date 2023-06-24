@@ -24,8 +24,9 @@ def add_token_to_database(token):
 
 def revoke_token(jti, user_id):
 	token = TokenBlockList.query.filter_by(jti=jti, user_id=user_id).first()
-	token.revoked_at = datetime.utcnow()
-	db.session.commit()
+	if token:
+		token.revoked_at = datetime.utcnow()
+		db.session.commit()
 
 @jwt.token_in_blocklist_loader
 def check_if_token_revoked(jwt_headers, jwt_payload):
