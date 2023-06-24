@@ -64,20 +64,20 @@ li a {
 }
 
 .socialmediaLinks #instagramIcon {
-	background: url('../../assets/icon-instagram.svg');
+	background: url('../../assets/icons/icon-instagram.svg');
 }
 
 .socialmediaLinks #instagramIcon:hover {
-	background: url('../../assets/instagram-colorful.svg');
+	background: url('../../assets/icons/instagram-colorful.svg');
 }
 
 .socialmediaLinks #whatsappIcon {
-	background: url('../../assets/icon-whatsapp.svg');
+	background: url('../../assets/icons/icon-whatsapp.svg');
 
 }
 
 .socialmediaLinks #whatsappIcon:hover {
-	background: url('../../assets/whatsapp-colorful.svg');
+	background: url('../../assets/icons/whatsapp-colorful.svg');
 }
 
 .divisory {
@@ -184,11 +184,11 @@ li a {
 	}
 
 	.socialmediaLinks #whatsappIcon {
-		background: url('../../assets/whatsapp-colorful.svg');
+		background: url('../../assets/icons/whatsapp-colorful.svg');
 	}
 
 	.socialmediaLinks #instagramIcon {
-		background: url('../../assets/instagram-colorful.svg');
+		background: url('../../assets/icons/instagram-colorful.svg');
 	}
 
 }

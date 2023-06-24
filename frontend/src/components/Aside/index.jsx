@@ -27,7 +27,7 @@ function Aside() {
 					<div className={styles.three}></div>
 				</div>
 				<nav>
-					<p className={styles.personalName}>Vitor Gabriel</p>
+					<p className={styles.personalName}>Bruno Alves</p>
 					<ul>
 						<li><Link onClick={changeAlbum} to="/">recentes</Link></li>
 						<li className={styles.albums}>

@@ -12,7 +12,7 @@ export default function AboutMe() {
 					</div>
 					<div className={styles.description}>
 						<p>
-							Me chamo Vitor e trabalho como fotógrafo há 15 anos, e aqui você encontrará uma coletânea dos meus melhores trabalhos em todos esses anos.<br/>
+							Me chamo Bruno e trabalho como fotógrafo há 15 anos, e aqui você encontrará uma coletânea dos meus melhores trabalhos em todos esses anos.<br/>
 							<span>Divirta-se.</span>
 						</p>
 					</div>

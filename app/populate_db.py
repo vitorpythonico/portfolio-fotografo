@@ -10,24 +10,18 @@ def add_photo(path, description, place, album):
 		place=place,
 		date=date.today(),
 		album_id=album
-		)
+	)
 
 	db.session.add(photo)
 	db.session.commit()
 
 def add_album(name):
-	album = Album(
-		name=name)
+	album = Album(name=name)
 
 	db.session.add(album)
 	db.session.commit()
 
-def load_photos(album_id):
-	album = Album.query.filter_by(id=album_id).first()
-	for photo in album.photos:
-		print(photo)
-
-def run_db_tests():
+def populate():
 	add_album('viagem')
 	add_album('pessoal')
 
@@ -38,11 +32,6 @@ def run_db_tests():
 	add_photo('ocean.jpeg', 'Cansei de escrever', 'Planet X', 2)
 	add_photo('alps train.jpg', 'Gastando meu 13º', 'Swiss Alps', 1)
 	add_photo('earth.jpg', 'Real ou barça?', '??', 2)
-	add_photo('header-moorea.jpg', 'Após lutar contra Ragnar Lothbrok', 'Valhalla', 2)
-	add_photo('huacachina-from-air-oasis.jpg', 'Vendo miragens após fumar 3 verdinhas e ficar perdido no deserto', 'México', 2)
-	add_photo('new-work.jpg', 'New Yoooooooork', 'New Work, USA', 2)
-
-
-	# load_photos(1)
-	# load_photos(2)
-
+	add_photo('headermoorea.jpg', 'Após lutar contra Ragnar Lothbrok', 'Valhalla', 2)
+	add_photo('huacachinafromairoasis.jpg', 'Vendo miragens após fumar 3 verdinhas e ficar perdido no deserto', 'México', 2)
+	add_photo('newwork.jpg', 'New Yoooooooork', 'New Work, USA', 2)
