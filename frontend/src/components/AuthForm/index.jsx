@@ -13,10 +13,17 @@ export default function AuthForm() {
 
 	const usernameRef = useRef();
 	const passwordRef = useRef();
+	const errorRef = useRef();
 
 	const handleUsername = (e) => setUsername(e.target.value)
 	const handlePassword = (e) => setPassword(e.target.value)
 
+	const handleError = () => {
+		if (error) {
+			setTimeout( () => setError(''), 2000)
+			return <p ref={errorRef} className={styles.loginError}>{error}</p>
+		}
+	}
 	const handleLogin = async (e) => {
 		e.preventDefault();
 		const user = username;
@@ -25,10 +32,8 @@ export default function AuthForm() {
 		if (logged) {
 			navigate('/admin')
 			return
-		} 
-		
+		}
 		setError('Usuário ou senha inválida')
-		
 	}
 	
 	return (
@@ -39,8 +44,8 @@ export default function AuthForm() {
 						<p>Faça login para ter acesso ao painel</p>
 						<form onSubmit={handleLogin} action="" method="POST">
 				
-								{ error ?	<p className={styles.loginError}>{error}</p> : null }
-				
+								{ handleError()	}
+
 							<label htmlFor="username">Usuário</label>
 							<input ref={usernameRef} onChange={handleUsername} id="username" type="text"/>
 							<div className={styles.inputPasswordMetadata}>

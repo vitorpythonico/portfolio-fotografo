@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import { useAuthContext } from '../../contexts/AuthContext'
 
 import Panel from './components/Panel'
 import Account from './components/Account'
-import Exit from './components/Exit'
 import AlbumList from './components/AlbumList'
 
 import panelIcon from '../../assets/icons/panel-icon.svg'
@@ -13,6 +13,11 @@ import styles from './ControlPanel.module.css';
 
 export default function ControlPanel() {
 	const [configComponent, setConfigComponent] = useState(<Panel />);
+	const auth = useAuthContext();
+
+	const handleLogout = () => {
+		auth.logout()
+	}
 
 	return (
 		<>
@@ -32,7 +37,7 @@ export default function ControlPanel() {
 										<img src={accountIcon} alt="Ícone da área Conta"/>
 										<h3>Conta</h3>
 									</button>
-									<button className={styles.area}>
+									<button onClick={handleLogout} className={styles.area}>
 										<img src={exitIcon}  alt="Ícone de sair do painel"/>
 										<h3>Sair</h3>
 									</button>

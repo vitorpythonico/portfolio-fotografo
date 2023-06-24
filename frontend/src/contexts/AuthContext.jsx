@@ -25,6 +25,7 @@ const AuthProvider = ({ children }) => {
 
 	const logout = () => {
 		api.logout()
+		setAuthenticated(false)
 	}
 
 	return (

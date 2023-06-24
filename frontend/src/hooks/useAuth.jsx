@@ -41,10 +41,16 @@ const login = async (username, password) => {
 		return false
 	}
 }
-
-const logout = async () => {
-	const response = await api.post('/account/logout');
-	// TODO
+ 
+const logout = () => {
+	api.defaults.headers['Authorization'] = `Bearer ${localStorage.refresh_token}`;
+	api.delete('/account/revoke_refresh');
+	
+	api.defaults.headers['Authorization'] = `Bearer ${localStorage.token}`;
+	api.delete('/account/revoke_access');
+	localStorage.removeItem('isAuth')
+	localStorage.removeItem('token')
+	localStorage.removeItem('refresh_token')
 }
 
 export const useAuth = () => ({ refreshToken, login, logout })
