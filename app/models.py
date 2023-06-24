@@ -90,6 +90,16 @@ class User(db.Model):
 		return f'<User user={self.username}>'
 
 
+class Profile(db.Model):
+	__tablename__ = 'profile'
+	id = db.Column(db.Integer, primary_key=True)
+	email = db.Column(db.String(100), nullable=False, unique=True)
+	instagram = db.Column(db.String(100))
+	whatsapp = db.Column(db.String(100))
+
+	def __repr__(self):
+		return f'<Profile email={self.email}>'
+
 class TokenBlockList(db.Model):
 	__tablename__ = 'tokens'
 	id = db.Column(db.Integer, primary_key=True)
