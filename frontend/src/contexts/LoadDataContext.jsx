@@ -1,19 +1,22 @@
-import { createContext, useState, useEffect} from 'react';
-import { useFetch } from '../hooks/useFetch'
+import { createContext, useState, useEffect, useContext } from 'react';
+import { useAxios } from '../hooks/useAxios'
 
-export const LoadPhotosContext = createContext();
+export const LoadDataContext = createContext();
 
-export const LoadPhotosProvider = ({ children }) => {
-	const [album, setAlbum] = useState('recentes');
+export const LoadDataProvider = ({ children }) => {
+	const [currentalbum, setCurrentAlbum] = useState('recentes');
 	
-	const API_URL = import.meta.env.VITE_BACKEND_API_URL;
-	const { data } = useFetch(API_URL + '/albums/' + album, 'GET');
+	const [photos, ...restPhotos] = useAxios('/albums/' + album, 'GET');
+	//const albums Fazer a chamada para os álbums 
+	const [profile, erroProfile, loadingProfile] = useAxios('/account/profile', 'GET')
 
-	const changeAlbum = (e) => setAlbum(e.target.textContent)
+	const changeAlbum = (e) => setCurrentAlbum(e.target.textContent)
 
 	return (
-		<LoadPhotosContext.Provider value={{ changeAlbum, data }}>
+		<LoadDataContext.Provider value={{ changeAlbum, photos, profile, loadingProfile }}>
 			{children}
-		</LoadPhotosContext.Provider>
+		</LoadDataContext.Provider>
 	)
 } 
+
+export const useLoadDataContext = () => useContext(LoadDataContext)

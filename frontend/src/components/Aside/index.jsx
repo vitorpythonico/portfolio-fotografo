@@ -1,12 +1,12 @@
 import {useRef, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { LoadPhotosContext} from '../../contexts/LoadPhotosContext'
+import { useLoadDataContext} from '../../contexts/LoadDataContext'
 
 import styles from './Aside.module.css'
 
 function Aside() {
 	const [showMenu, setShowMenu] = useState(true);
-	const { changeAlbum } = useContext(LoadPhotosContext)
+	const { changeAlbum, profile, loadingProfile } = useLoadDataContext();
 
 	const albumList = useRef();
 	const menu = useRef();
@@ -41,8 +41,8 @@ function Aside() {
 					</ul>
 				</nav>
 				<div className={styles.socialmediaLinks}>
-					<a id={styles.instagramIcon} className={styles.svgImages} href="#" target="_blank"></a>
-					<a id={styles.whatsappIcon} className={styles.svgImages} href="#" target="_blank"></a>
+					<a id={styles.instagramIcon} className={styles.svgImages} href={loadingProfile ? null : profile.instagram} target="_blank"></a>
+					<a id={styles.whatsappIcon} className={styles.svgImages} href={loadingProfile ? null : profile.whatsapp} target="_blank"></a>
 				</div>
 			</aside>
 			<div className={styles.divisory}></div>

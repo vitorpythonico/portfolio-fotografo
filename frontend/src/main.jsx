@@ -8,7 +8,7 @@ import Login from './pages/Login'
 import Admin from './pages/Admin'
 
 import PrivateRoute from './components/PrivateRoute';
-import { LoadPhotosProvider } from './contexts/LoadPhotosContext'
+import { LoadDataProvider } from './contexts/LoadDataContext'
 import { AuthProvider } from './contexts/AuthContext'
 
 import './styles.css'
@@ -16,7 +16,7 @@ import './styles.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <LoadPhotosProvider>
+      <LoadDataProvider>
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />}/>
@@ -25,7 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/admin" element={<PrivateRoute><Admin /></PrivateRoute>}/>
         </Routes>
       </AuthProvider>
-      </LoadPhotosProvider>
+      </LoadDataProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )

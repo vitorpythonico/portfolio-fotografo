@@ -1,14 +1,14 @@
 import { useContext } from 'react'
-import { LoadPhotosContext} from '../../contexts/LoadPhotosContext'
+import { useLoadDataContext} from '../../contexts/LoadDataContext'
 
 import PhotoCard from '../PhotoCard'
 import styles from './PhotoViewer.module.css'
 
 
 export default function PhotoViewer() {
-	const {data, error, loading} = useContext(LoadPhotosContext)
+	const { photos } = useLoadDataContext();
 
-	if (data)
+	if (photos)
 		return (
 			<>
 				<main className={styles.photoViewer}>
@@ -17,7 +17,7 @@ export default function PhotoViewer() {
 					</div>
 					<div className={styles.photoGalery}>
 						{
-							Object.values(data).map((photo, id) =>
+							Object.values(photos).map((photo, id) =>
 								<PhotoCard
 									key={id}
 									src={photo.src}
