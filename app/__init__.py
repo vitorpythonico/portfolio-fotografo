@@ -3,7 +3,8 @@ from flask import Flask, send_from_directory, Blueprint
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
-from config import config, create_img_folder, create_db
+from config import config, create_db
+
 
 db = SQLAlchemy()
 jwt = JWTManager()
@@ -17,14 +18,12 @@ def create_app(config_name):
 	CORS(app)
 
 	from . import populate_db
-
 	from . import api
+
 	api.init_bp(app)
 
-	if not app.config['IMG_PATH'][:4] == 'http':
-		create_img_folder(app.config['IMG_PATH'])
-
 	with app.app_context():
+
 		db_exists = create_db(app, db)
 		if not db_exists:
 			populate_db.populate()

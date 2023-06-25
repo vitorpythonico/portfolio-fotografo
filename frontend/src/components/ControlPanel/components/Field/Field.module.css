@@ -4,6 +4,10 @@
 	gap: 0.5rem;
 }
 
+.container p {
+	text-transform: capitalize;
+}
+
 .container input {
 	color: gray;
 	background: #D9D9D9;
@@ -11,7 +15,7 @@
 
 	font-size: 1rem;
 	text-align: center;
-	
+
 	border-radius: 8px;
 	line-height: 2.5rem;
 
@@ -47,4 +51,9 @@
 
 .hidden {
 	visibility: hidden
+}
+
+.sucessMsg {
+	color: #30bf26;
+	padding-left: 2rem;
 }

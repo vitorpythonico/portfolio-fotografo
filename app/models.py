@@ -5,7 +5,7 @@ from . import db
 class Photo(db.Model):
 	__tablename__ = 'photos'
 	id = db.Column(db.Integer, primary_key=True)
-	src = db.Column(db.String(200), unique=True, nullable=False)
+	src = db.Column(db.String(300), unique=True, nullable=False)
 	description = db.Column(db.String(200))
 	place = db.Column(db.String(100))
 	date = db.Column(db.DateTime)
@@ -96,6 +96,7 @@ class Profile(db.Model):
 	email = db.Column(db.String(100), nullable=False, unique=True)
 	instagram = db.Column(db.String(100))
 	whatsapp = db.Column(db.String(100))
+	cdn = db.Column(db.String(300))
 
 	def __repr__(self):
 		return f'<Profile email={self.email}>'

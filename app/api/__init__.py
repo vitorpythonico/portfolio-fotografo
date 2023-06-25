@@ -1,9 +1,7 @@
 import os
 from flask import Blueprint
 
-IMG_FOLDER = os.getenv('IMG_PATH')
-
-api = Blueprint('api', __name__, static_folder=f'../../{IMG_FOLDER}')
+api = Blueprint('api', __name__, static_folder='../../imagens')
 
 from . import account, profile, albums
 

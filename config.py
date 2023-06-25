@@ -11,18 +11,10 @@ def create_db(app, db):
 	db.create_all()
 	return False
 
-def create_img_folder(folder):
-	path = os.path.join(BASE_FOLDER, folder)
-
-	if not (os.path.exists(path)):
-		os.mkdir(path, mode=0o644)
-
-
 class Config:
 	DEBUG = False
 	TESTING = False
 	SECRET_KEY = os.environ.get('SECRET_KEY')
-	IMG_PATH = os.environ.get('IMG_PATH')
 	JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
 	JWT_TOKEN_LOCATION = 'headers'
 	JWT_IDENTITY_CLAIM = 'user_id'

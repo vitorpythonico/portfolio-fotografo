@@ -1,9 +1,11 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, forwardRef } from 'react'
 
 import confirmEditIcon from '../../../../assets/icons/confirm-edit-icon.svg'
 import styles from './Field.module.css'
 
-export default function Field({ icon = null, name, value}) {
+const Field = forwardRef(function Field({ icon = null, name, value, updateFields}, ref) {
+	const [msg, setMsg] = useState();
+
 	const editFieldRef = useRef();
 	const confirmEditIconRef = useRef();
 
@@ -14,6 +16,13 @@ export default function Field({ icon = null, name, value}) {
 		confirmEditIconRef.current.classList.add(styles.hidden)
 	}
 
+	const handleMsg = () => {
+		if (msg) {
+			setTimeout( () => setMsg(''), 1500)
+			return <p className={styles.sucessMsg}>{msg}</p>
+		}
+	}
+
 	return (
 		<>
 			<div className={styles.container}>
@@ -21,17 +30,20 @@ export default function Field({ icon = null, name, value}) {
 					<img src={icon} alt={`Ícone de {name}`}/>
 					: null
 				}
-				<p>{name}:</p>
+				<label htmlFor={name}>{name}:</label>
 				<div
 					ref={editFieldRef}
 					onFocus={handleFocusIn}
 					onBlur={handleFocusOut}
 					className={styles.editField}>
 					<input
+						ref={ref}
+						id={name}
 						type="text"
 						defaultValue={value}/>
 					<button className={styles.btn}>
 						<img
+							onClick={() => updateFields(setMsg)}
 							ref={confirmEditIconRef}
 							className={styles.hidden}
 							src={confirmEditIcon}
@@ -40,6 +52,9 @@ export default function Field({ icon = null, name, value}) {
 					</button>
 				</div>	
 			</div>
+			{ handleMsg() }
 		</>
 	)
-}
+})
+
+export default Field

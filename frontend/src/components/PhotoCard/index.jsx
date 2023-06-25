@@ -1,13 +1,14 @@
+import { useLoadDataContext } from '../../contexts/LoadDataContext'
 import styles from './PhotoCard.module.css'
 
 export default function PhotoCard( {src, description, date, place} ) {
-	const CDN_URL = import.meta.env.VITE_CDN_URL
+	const { profile, loadingProfile } = useLoadDataContext()
 
 	return (
 	<>
 		<div className={styles.container}>
 			<div className={styles.photoCard}>
-				<img src={CDN_URL + src} alt="photography" />
+				<img src={!loadingProfile ? profile.cdn + src : null} alt="photography" />
 				<h6 className={styles.description}>
 					{description}
 				</h6>

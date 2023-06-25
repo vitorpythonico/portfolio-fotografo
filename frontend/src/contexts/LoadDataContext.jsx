@@ -4,10 +4,9 @@ import { useAxios } from '../hooks/useAxios'
 export const LoadDataContext = createContext();
 
 export const LoadDataProvider = ({ children }) => {
-	const [currentalbum, setCurrentAlbum] = useState('recentes');
+	const [currentAlbum, setCurrentAlbum] = useState('recentes');
 	
-	const [photos, ...restPhotos] = useAxios('/albums/' + album, 'GET');
-	//const albums Fazer a chamada para os álbums 
+	const [photos, ...restPhotos] = useAxios('/albums/' + currentAlbum, 'GET');
 	const [profile, erroProfile, loadingProfile] = useAxios('/account/profile', 'GET')
 
 	const changeAlbum = (e) => setCurrentAlbum(e.target.textContent)

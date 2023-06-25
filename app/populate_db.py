@@ -30,11 +30,12 @@ def create_user(user, passwd):
 	db.session.add(user)
 	db.session.commit()
 
-def create_profile(email, instagram, whatsapp):
+def create_profile(email, instagram, whatsapp, cdn):
 	profile = Profile(
 		email=email,
 		instagram=instagram,
-		whatsapp=whatsapp
+		whatsapp=whatsapp,
+		cdn=cdn
 		)
 
 	db.session.add(profile)
@@ -59,5 +60,6 @@ def populate():
 	create_profile(
 		'brunoalvesguimaraes@gmail.com', 
 		'https://www.instagram.com/batalhadaaldeia/',
-		'https://chat.whatsapp.com/ELW3pMzZ9L4Gwspkj6nKqW'
+		'https://chat.whatsapp.com/ELW3pMzZ9L4Gwspkj6nKqW',
+		'http://192.168.0.107:5000/imagens/'
 		)
