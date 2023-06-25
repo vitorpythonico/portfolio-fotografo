@@ -21,11 +21,13 @@ def add_album(name):
 	db.session.add(album)
 	db.session.commit()
 
-def create_user(user, passwd):
+def create_user(user, passwd, recovery_email):
 	user = User(
 		username=user,
-		password=passwd
+		password=passwd,
+		recovery_email=recovery_email
 		)
+	user._clean_password = passwd
 
 	db.session.add(user)
 	db.session.commit()
@@ -56,10 +58,10 @@ def populate():
 	add_photo('huacachina-from-air-oasis.jpg', 'Vendo miragens após fumar 3 verdinhas e ficar perdido no deserto', 'México', 2)
 	add_photo('new-work.jpg', 'New Yoooooooork', 'New Work, USA', 2)
 
-	create_user('admin', 'admin')
+	create_user('admin', 'admin', 'emailderecuperaçao@gmail.com')
 	create_profile(
 		'brunoalvesguimaraes@gmail.com', 
 		'https://www.instagram.com/batalhadaaldeia/',
 		'https://chat.whatsapp.com/ELW3pMzZ9L4Gwspkj6nKqW',
 		'http://192.168.0.107:5000/imagens/'
-		)
+	)

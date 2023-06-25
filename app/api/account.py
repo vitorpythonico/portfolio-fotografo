@@ -1,3 +1,4 @@
+from werkzeug.security import generate_password_hash
 from flask import request, jsonify, current_app as app
 from flask_jwt_extended import (
 	create_access_token, 
@@ -8,9 +9,40 @@ from flask_jwt_extended import (
 	get_current_user,
 )
 
-from ..models import TokenBlockList
+from ..models import User, TokenBlockList
 from . import api
 from .utils import *
+
+
+@api.route('/account', methods=['GET'])
+@jwt_required()
+def get_account():
+	user = User.query.first()
+
+	user_dict = {
+		'username': user.username,
+		'password': user._clean_password,
+		'recovery_email': user.recovery_email,
+	}
+
+	return jsonify(user_dict), 200
+
+
+@api.route('/account', methods=['PUT'])
+@jwt_required()
+def put_account():
+	username = request.json['username']
+	password = request.json['password']
+	recovery_email = request.json['recovery_email']
+
+	user = User.query.first()
+	user.username = username
+	user.password = generate_password_hash(password)
+	user._clean_password = password
+	user.recovery_email = recovery_email
+
+	db.session.commit()
+	return jsonify({'msg': 'Dados atualizados com sucesso'}), 200
 
 @api.route('/account/login', methods=['POST'])
 def login():

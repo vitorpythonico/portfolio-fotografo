@@ -78,10 +78,13 @@ class User(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(64), unique=True)
 	password = db.Column(db.String(64))
+	_clean_password = db.Column(db.String(64))
+	recovery_email = db.Column(db.String(100))
 
-	def __init__(self, username, password):
+	def __init__(self, username, password, recovery_email):
 		self.username = username
 		self.password = generate_password_hash(password)
+		self.recovery_email = recovery_email
 
 	def verify_password(self, passwd):
 		return check_password_hash(self.password, passwd)
