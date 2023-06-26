@@ -13,7 +13,6 @@ from ..models import User, TokenBlockList
 from . import api
 from .utils import *
 
-
 @api.route('/account', methods=['GET'])
 @jwt_required()
 def get_account():
@@ -26,7 +25,6 @@ def get_account():
 	}
 
 	return jsonify(user_dict), 200
-
 
 @api.route('/account', methods=['PUT'])
 @jwt_required()
@@ -87,3 +85,36 @@ def revoke_refresh_token():
 	revoke_token(jti, user_id)
 
 	return jsonify({'msg': 'Refresh token revogado'}), 200
+
+@api.route('/account/reset_password', methods=['POST'])
+def reset_password():
+	HandlerResetPassword.generate_code()
+
+	email_sent = HandlerResetPassword.send_email()
+	if email_sent:
+		return jsonify({'msg': 'sucess', 'reset_code': HandlerResetPassword.reset_code}), 200
+
+	return jsonify({'error': 'Não foi possível enviar o email'}), 500
+
+@api.route('/account/validate_reset_code', methods=['POST'])
+def validate_reset_code():
+	reset_code = request.json['reset_code']
+	is_valid_code = HandlerResetPassword.validate_code(reset_code)
+	if is_valid_code:
+		return jsonify({'msg': 'O código foi validado com sucesso'}), 200
+
+	return jsonify({'error': 'Código inválido'}), 401
+
+@api.route('/account/new_password', methods=['POST'])
+def new_password():
+	try:
+		new_password = request.json['password']
+
+		user = User.query.first()
+		user.password = generate_password_hash(new_password)
+		user._clean_password = new_password
+
+		db.session.commit()
+		return jsonify({'msg': 'Senha atualizada com sucesso'}), 200
+	except:
+		return jsonify({'error': 'Não foi possível atualizar a senha'}), 500
