@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { useAuthContext } from '../../contexts/AuthContext'
 import styles from './AuthForm.module.css'
 
@@ -15,16 +15,16 @@ export default function AuthForm() {
 	const passwordRef = useRef();
 	const errorRef = useRef();
 
-	const handleUsername = (e) => setUsername(e.target.value)
-	const handlePassword = (e) => setPassword(e.target.value)
+	const handlerUsername = (e) => setUsername(e.target.value)
+	const handlerPassword = (e) => setPassword(e.target.value)
 
-	const handleError = () => {
+	const handlerError = () => {
 		if (error) {
 			setTimeout( () => setError(''), 2000)
 			return <p ref={errorRef} className={styles.loginError}>{error}</p>
 		}
 	}
-	const handleLogin = async (e) => {
+	const handlerLogin = async (e) => {
 		e.preventDefault();
 		const user = username;
 		const pass = password;
@@ -35,24 +35,24 @@ export default function AuthForm() {
 		}
 		setError('Usuário ou senha inválida')
 	}
-	
+
 	return (
 		<>
 			<div className={styles.container}>
 				<div className={styles.loginCard}>
 					<div className={styles.loginCardBox}>
 						<p>Faça login para ter acesso ao painel</p>
-						<form onSubmit={handleLogin} action="" method="POST">
+						<form onSubmit={handlerLogin} action="" method="POST">
 				
-								{ handleError()	}
+								{ handlerError()	}
 
 							<label htmlFor="username">Usuário</label>
-							<input ref={usernameRef} onChange={handleUsername} id="username" type="text"/>
+							<input ref={usernameRef} onChange={handlerUsername} id="username" type="text"/>
 							<div className={styles.inputPasswordMetadata}>
 								<label htmlFor="password">Senha</label>
-								<a href="">Esqueci a senha</a>
+								<Link to="/login/redefinir_senha">Esqueci a senha</Link>
 							</div>
-							<input ref={passwordRef} onChange={handlePassword} id="password" type="password"/>
+							<input ref={passwordRef} onChange={handlerPassword} id="password" type="password"/>
 							<button>
 								Entrar
 							</button>

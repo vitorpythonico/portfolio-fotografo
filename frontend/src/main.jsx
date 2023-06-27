@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Login from './pages/Login'
 import Admin from './pages/Admin'
+import ForgotPassword from './pages/ForgotPassword'
 
 import PrivateRoute from './components/PrivateRoute';
 import { LoadDataProvider } from './contexts/LoadDataContext'
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/" element={<Home />}/>
           <Route path="/sobre" element={<About />}/>
           <Route path="/login" element={<Login />}/>
+          <Route path="/login/redefinir_senha" element={<ForgotPassword />}/>
           <Route path="/admin" element={<PrivateRoute><Admin /></PrivateRoute>}/>
         </Routes>
       </AuthProvider>
