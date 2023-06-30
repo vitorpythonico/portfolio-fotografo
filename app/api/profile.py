@@ -26,7 +26,6 @@ def put_profile():
 	whatsapp = request.json['whatsapp']
 	cdn = request.json['cdn']
 
-
 	profile = Profile.query.first()
 	profile.email = email
 	profile.instagram = instagram
