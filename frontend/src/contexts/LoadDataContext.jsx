@@ -5,14 +5,14 @@ export const LoadDataContext = createContext();
 
 export const LoadDataProvider = ({ children }) => {
 	const [currentAlbum, setCurrentAlbum] = useState('recentes');
-	
+	const [albums, ,loadingAlbums] = useAxios('/albums', 'GET')
 	const [photos, ...restPhotos] = useAxios('/albums/' + currentAlbum, 'GET');
-	const [profile, erroProfile, loadingProfile] = useAxios('/account/profile', 'GET')
+	const [profile, , loadingProfile] = useAxios('/account/profile', 'GET')
 
 	const changeAlbum = (e) => setCurrentAlbum(e.target.textContent)
 
 	return (
-		<LoadDataContext.Provider value={{ changeAlbum, photos, profile, loadingProfile }}>
+		<LoadDataContext.Provider value={{ changeAlbum, albums, loadingAlbums, photos, profile, loadingProfile }}>
 			{children}
 		</LoadDataContext.Provider>
 	)

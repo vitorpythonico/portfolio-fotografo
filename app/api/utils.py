@@ -87,3 +87,6 @@ class HandlerResetPassword:
 	@classmethod
 	def __is_revoked(self):
 		return self.created_at + datetime.timedelta(minutes=20) < datetime.datetime.now() or self.revoked == True
+
+def is_allowed_file(filename):
+  return '.' in filename and   filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']

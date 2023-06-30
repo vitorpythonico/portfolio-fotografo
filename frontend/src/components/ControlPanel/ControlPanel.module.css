@@ -16,13 +16,12 @@
 	display: flex;
 
 	width: 60rem;
-	height: 50rem;
+	min-height: 50rem;
 	background:  #303045;
 	border-radius: 1rem;
 }
 
 .controlPanel {
-
 	width: 28%;
 	height: 100%;
 }

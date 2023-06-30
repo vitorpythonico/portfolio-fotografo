@@ -6,7 +6,7 @@ import styles from './Aside.module.css'
 
 function Aside() {
 	const [showMenu, setShowMenu] = useState(true);
-	const { changeAlbum, profile, loadingProfile } = useLoadDataContext();
+	const { albums, loadingAlbums, changeAlbum, profile, loadingProfile } = useLoadDataContext();
 
 	const albumList = useRef();
 	const menu = useRef();

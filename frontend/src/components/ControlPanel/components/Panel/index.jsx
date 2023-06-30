@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { useLoadDataContext } from '../../../../contexts/LoadDataContext'
 import { api } from '../../../../services/api'
 import Field from '../Field'
+import UploadPhoto from '../UploadPhoto'
 import styles from '../../ControlPanel.module.css'
 
 import emailIcon from '../../../../assets/icons/icon-email.svg'
@@ -17,7 +18,7 @@ export default function Panel() {
 	const instagramRef = useRef();
 	const whatsappRef = useRef();
 	const cdnRef = useRef();
-
+ 
 	const updateProfile = async (setMsg) => {
 		const email = emailRef.current.value
 		const instagram = instagramRef.current.value
@@ -44,7 +45,9 @@ export default function Panel() {
 					<h2>Fotos</h2>
 					<div className={styles.divisory}></div>
 					<Field ref={cdnRef} icon={cdnIcon} name="Servidor" value={profile.cdn} updateFields={updateProfile}/>
-					<div className={styles.upload}></div>
+					<div className={styles.upload}>
+						<UploadPhoto />
+					</div>
 				</div>
 			</div>
 		</>

@@ -15,6 +15,8 @@ class Config:
 	DEBUG = False
 	TESTING = False
 	SECRET_KEY = os.environ.get('SECRET_KEY')
+	UPLOAD_FOLDER = os.getenv('UPLOAD_PATH', 'imagens/')
+	ALLOWED_EXTENSIONS = os.environ.get('ALLOWED_EXTENSIONS')
 
 	JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
 	JWT_TOKEN_LOCATION = 'headers'
