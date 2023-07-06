@@ -76,8 +76,8 @@ class Album(db.Model):
 	def get_albums():
 		albums = Album.query.all()
 		response = {}
-		for id, album in enumerate(albums):
-			response[id] = {
+		for album in albums:
+			response[album.id] = {
 				'name': album.name
 			}
 

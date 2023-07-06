@@ -1,4 +1,4 @@
-import {useRef, useState, useContext } from 'react'
+import {useRef, useState, useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useLoadDataContext} from '../../contexts/LoadDataContext'
 
@@ -6,21 +6,33 @@ import styles from './Aside.module.css'
 
 function Aside() {
 	const [showMenu, setShowMenu] = useState(true);
+	const [albumList, setAlbumList] = useState([]);
 	const { albums, loadingAlbums, changeAlbum, profile, loadingProfile } = useLoadDataContext();
 
-	const albumList = useRef();
-	const menu = useRef();
+	const albumListRef = useRef();
+	const menuRef = useRef();
 
-	const showAlbums = () => { albumList.current.classList.toggle(styles.hidden) };
+	useEffect(() => {
+		if (albums){
+			const indexes = Object.keys(albums);
+
+			setAlbumList(
+				indexes.map(id => <li key={id}><Link onClick={changeAlbum} to="/">{albums[id].name}</Link></li>)
+			)
+		}
+		
+	}, [albums])
+
+	const showAlbums = () => { albumListRef.current.classList.toggle(styles.hidden) };
 	const showMenuToggle = () => {
 		document.body.style.overflow = showMenu ? 'hidden' : 'initial';
 		menu.current.classList.toggle(styles.on);
 		setShowMenu(!showMenu);
 	};
 
-	return (
+	if (!loadingAlbums) return (
 		<>
-			<aside ref={menu} className={styles.aside}>
+			<aside ref={menuRef} className={styles.aside}>
 				<div onClick={showMenuToggle} className={styles.menuToggle}>
 					<div className={styles.one}></div>
 					<div className={styles.two}></div>
@@ -32,9 +44,8 @@ function Aside() {
 						<li><Link onClick={changeAlbum} to="/">recentes</Link></li>
 						<li className={styles.albums}>
 							<p onClick={showAlbums}>Álbuns</p>
-							<ul ref={albumList} className={styles.hidden}>
-								<li><Link onClick={changeAlbum} to="/">pessoal</Link></li>
-								<li><Link onClick={changeAlbum} to="/">viagem</Link></li>
+							<ul ref={albumListRef} className={styles.hidden}>
+								{ albumList }
 							</ul>
 						</li>
 						<li><Link to="/sobre">sobre mim</Link></li>

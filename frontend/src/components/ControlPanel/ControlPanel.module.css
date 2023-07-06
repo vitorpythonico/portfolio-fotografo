@@ -16,7 +16,7 @@
 	display: flex;
 
 	width: 60rem;
-	min-height: 50rem;
+	height: 50rem;
 	background:  #303045;
 	border-radius: 1rem;
 }
@@ -24,11 +24,12 @@
 .controlPanel {
 	width: 28%;
 	height: 100%;
+	overflow: scroll;
 }
 
 .controlPanelBox {
-	margin: 2rem;
-}
+	margin:2rem;
+}	
 
 .controlPanelBox h2 {
 	font-size: 2.2rem;
@@ -39,7 +40,6 @@
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
-
 }
 
 .controlPanelBox .generalArea .area {
@@ -48,6 +48,7 @@
 	padding: 0.2rem;
 	background: #303045;
 	border: 0;
+	transition-duration: 0.2s;
 
 }
 
@@ -77,7 +78,6 @@
 
 .controlPanelCard .divisory {
 	width: 0.2rem;
-
 	background: #443F3F;
 }
 
@@ -85,6 +85,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	overflow: scroll; /* Fazer com que só se torne scroll se passar do height */
 }
 
 .content h1 {

@@ -30,7 +30,7 @@ export default function ControlPanel() {
 								<div className={styles.areas}>
 									<button onClick={() => setConfigComponent(<Panel/ >)} className={styles.area}>
 										<img src={panelIcon} alt="Ícone da área Painel"/>
-										<h3>Painel</h3>
+											<h3>Painel</h3>
 									</button>
 									
 									<button onClick={() => setConfigComponent(<Account/ >)} className={styles.area}>
@@ -44,8 +44,8 @@ export default function ControlPanel() {
 								</div>
 							</div>
 							<div className={styles.divisoryAreas}></div>
-							<div className={styles.albumsArea}>
-								<AlbumList/>
+							<div className={styles.albumListArea}>
+								<AlbumList setConfigComponent={setConfigComponent}/>
 							</div>
 						</div>
 					</div>

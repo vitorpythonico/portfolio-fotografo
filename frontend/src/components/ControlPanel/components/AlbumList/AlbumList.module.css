@@ -1,0 +1,18 @@
+ul {
+	position: relative;
+	left: -1rem;
+}
+
+.li img {
+	width: 1.5rem;
+	height: 1.5rem;
+	transition-duration: 0.3s;
+}
+
+
+.li img:hover {
+	background: var(--neon_color);
+	border-radius : 0.5rem;
+	padding: 0.2rem;
+	cursor: pointer;
+}

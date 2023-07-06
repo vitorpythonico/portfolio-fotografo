@@ -44,8 +44,8 @@ def create_profile(email, instagram, whatsapp, cdn):
 	db.session.commit()
 
 def populate():
-	add_album('viagem')
-	add_album('pessoal')
+	add_album('viagens')
+	add_album('pessoais')
 
 	add_photo('city.jpeg', 'Estudando pra Havard', 'New York', 2)
 	add_photo('antarctica.jpg', 'Jornada pra provar que a Terra é plana', 'Antartica', 1)

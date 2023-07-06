@@ -27,35 +27,35 @@ def post_album(album):
 			new_album = Album(album)
 			db.session.add(new_album)
 			db.session.commit()
-			return jsonify({'msg': 'Álbum criado com sucesso'}), 200
+			return jsonify({'msg': 'Álbum criado', 'album_id': str(new_album.id)}), 200
 
 		return jsonify({'error': 'O álbum já existe'}), 409
 
 	except:
 		return jsonify({'error': 'Não foi possível criar o álbum'}), 500
 
-@api.route('/albums/<album>', methods=['PUT'])
+@api.route('/albums/<id>', methods=['PUT'])
 @jwt_required()
-def put_album(album):
+def put_album(id):
 	try: 
 		new_name = request.json['new_name']
-		album = Album.query.filter_by(name=album).first()
+		album = Album.query.filter_by(id=id).first()
 
 		if album:
 			album.name = new_name
 			db.session.commit()
-			return jsonify({'msg': 'Álbum renomeado com sucesso'}), 200
+			return jsonify({'msg': 'Álbum renomeado'}), 200
 
 		return jsonify({'error': 'O álbum não existe'}), 404
 
 	except:
 		return jsonify({'error': 'Não foi possível renomear o álbum'}), 500
 
-@api.route('/albums/<album>', methods=['DELETE'])
+@api.route('/albums/<id>', methods=['DELETE'])
 @jwt_required()
-def delete_album(album):
+def delete_album(id):
 	try:
-		album = Album.query.filter_by(name=album).first()
+		album = Album.query.filter_by(id=id).first()
 
 		if album:
 			db.session.delete(album)

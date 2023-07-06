@@ -33,7 +33,6 @@ export default function IncludePhotoMetadata({filename, setUploaded = f => f}) {
 		const description = descriptionRef.current.value;
 		const place = placeRef.current.value;
 		const album_id = albumRef.current.selectedIndex + 1;
-		console.log(album_id)
 		try{
 			const response = await api.post('/photos/upload/metadata', { filename, description, place, album_id} )
 			if (response.status === 200) setMsg({

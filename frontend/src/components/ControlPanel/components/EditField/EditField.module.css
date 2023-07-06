@@ -1,0 +1,41 @@
+.container {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+
+	line-height: 2.2rem;
+	font-size: 1.1rem;
+	padding-left: 0.5rem;
+
+}
+
+.container p {
+ 	transition-duration: 0.3s;
+}
+
+
+.container p:first-letter {
+	text-transform: uppercase;
+}
+
+
+.container p:hover {
+	color: var(--neon_color);
+	cursor: pointer;
+}
+
+.container input {
+	font-size: 1.1rem;
+	width: 100%;
+	color: #000;
+}
+
+.sucessMessage {
+	margin-left: 0.5rem;
+	color: #30bf26;
+}
+
+.errorMessage {
+	margin-left: 0.5rem;
+	color: red;
+}
