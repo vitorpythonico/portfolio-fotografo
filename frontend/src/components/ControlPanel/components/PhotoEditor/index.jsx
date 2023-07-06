@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { api } from '../../../../services/api'
 
-import PhotoEditCard from './PhotoEditCard'
+import PhotoEditCard from './components/PhotoEditCard'
 import styles from './PhotoEditor.module.css'
 
 export default function PhotoEditor({ album }) {
@@ -14,14 +14,25 @@ export default function PhotoEditor({ album }) {
 			const indexes = Object.keys(photos)
 
 			setPhotos(
-				indexes.map((index, id) => (
-					<PhotoEditCard key={id} {...photos[index]}/>
+				indexes.map((index) => (
+					<PhotoEditCard
+						key={index}
+						id={index}
+						album={album}
+						deleteElementFromArray={deleteElementFromArray}
+						{...photos[index]}
+					/>
 				))
 			)
 		}
 		getPhotos();
 
 	}, [album])
+
+	const deleteElementFromArray = (id) => {
+		setPhotos(prevState =>  [...prevState.filter(item => item.key !== id) ])
+	}
+
 	return (
 		<> 
 			<div className={styles.container}>

@@ -11,7 +11,6 @@
 	max-width: 100%;
 	object-fit: scale-down;
 	border-radius: 10px;
-	cursor: pointer;
 }
 
 .photoMetadata {
@@ -27,11 +26,6 @@
 	font-size: 1.4rem;
 	margin-top: 0.5rem;
 	transition-duration: 0.5s;
-}
-
-.photoCard .description:hover {
-	cursor: pointer;
-	color: var(--neon_color);
 }
 
 .photoMetadata .date {

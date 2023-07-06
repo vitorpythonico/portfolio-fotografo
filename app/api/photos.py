@@ -81,15 +81,15 @@ def change_album(id):
 	except:
 		return jsonify({'error': 'Não foi possível mudar o álbum'}), 500
 
-@api.route('/photos/<id>/src', methods=['PUT'])
+@api.route('/photos/<id>/place', methods=['PUT'])
 @jwt_required()
 def put_src_photo(id):
 	try:
-		new_src = request.json['new_src']
+		new_place = request.json['place']
 		photo = Photo.query.filter_by(id=id).first()
 
 		if photo:
-			photo.src = new_src
+			photo.place = new_place
 			db.session.commit()
 			return jsonify({'msg': 'Origem atualizada'}), 200
 
